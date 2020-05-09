@@ -1,0 +1,91 @@
+html {
+    font-family: -apple-system, 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background: rgb(131,58,180);
+    background: linear-gradient(0deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); 
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer {
+    width: 60vw;
+    height: 60vh;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.primaryContainer {
+    background-color: #d0d3d4;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.primaryContainer > h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.responseWindow {
+    border: 1px darkgrey solid;
+    border-radius: 5px;
+    background:  #f8f9f9;
+    width: 75%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    overflow: scroll;
+}
+
+.secondaryContainer {
+    background-color:  #aeb6bf;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.instructions {
+    width: 60%;
+    /* text-align: center; */
+}
+
+.submitButton {
+    color: white;
+    display: flex;
+    border-radius: 5px;
+    width: 4.6rem;
+    height: 2.2rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color:#1f618d;
+    box-shadow: 0 8px 12px -6px #273746;
+}
+
+.submitButton:hover {
+    cursor: pointer;
+    background-color:#3498db;
+    box-shadow: 0 0px 0px 0px transparent;
+}
