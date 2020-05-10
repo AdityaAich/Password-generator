@@ -1,5 +1,7 @@
 # Password-generator
 
-A work-in-progress password generator using HTML, CSS and JavaScript. This was originally created to create a random password from a requested length of characters.
+A simple password generator using HTML, CSS and JavaScript. This was created to generate a random password from a requested length of characters.
 
-I'll be working on adding in the ability to choose whether or not to use lower case characters, upper case character, number or special characters.
+May 10:
+
+Added ability to select whether or not to use upper case characters, numbers or special characters into the generated password.
