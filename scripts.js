@@ -19,17 +19,31 @@ $(document).ready(function(){
     // Create string of all characters for password & pass into array
 
     const createPasswordArray = (arr) => {
-        const lowerAlphaLibrary = 'abcdefghijklmnopqrstuvwxyz';
-        const upperAlphaLibrary = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const numberLibrary = '1234567890';
-        const specialLibrary = '~!@#$%^&*()_+=-';
-        const selectedLibrary = lowerAlphaLibrary;
-        const fullstringLibrary = [];
-        for (let item in arr) {
-            fullstringLibrary = selectedLibrary.concat(item);
+        const passwordLibrary = {
+            upperAlphaLibrary: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            numberLibrary: '1234567890',
+            specialLibrary: '~!@#$%^&*()_+=-',
         }
-        const arrayLibrary = fullstringLibrary.split('');
-        return arrayLibrary;
+        let fullstringLibrary = 'abcdefghijklmnopqrstuvwxyz';
+        const keysOfPasswordLibrary = Object.keys(passwordLibrary);
+        const values = Object.values(arr);
+        for (const key of keysOfPasswordLibrary) {
+            for (const value of values) {
+                if (key === value) {
+                    fullstringLibrary = fullstringLibrary + passwordLibrary[key];
+                }
+            }
+        }
+        return fullstringLibrary;
+        // for (let item of arr) {
+        //     for (let book of passwordLibrary) {
+        //         if (item == book.key);
+        //             console.log(item, key);
+        //     }
+            
+        // }
+        // const arrayLibrary = fullstringLibrary.split('');
+        // return arrayLibrary;
     }
 
     // const lowerAlphaLibrary = 'abcdefghijklmnopqrstuvwxyz';
@@ -47,6 +61,7 @@ $(document).ready(function(){
     // Function to create the password, return as string
     const createPassword = (passwordLength) => {
         const finalPassword = [];
+        const arrayLibrary = createPasswordArray(getRadioBtnValue());
         for (i = 0; i < passwordLength; i++) {
             let randomNumber = randInt(arrayLibrary.length);
             finalPassword.push(arrayLibrary[randomNumber]);
@@ -70,6 +85,4 @@ $(document).ready(function(){
         }
         
     })
-
-    getRadioBtnValue();
 });
