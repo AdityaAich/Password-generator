@@ -1,8 +1,6 @@
 // when document is ready
 $(document).ready(function(){
 
-    // Get value of the radio buttons
-
     const getRadioBtnValue = () => {
         const useUpperBtn = document.querySelector('#useUpper');
         const useNumberBtn = document.querySelector('#useNumbers');
@@ -15,8 +13,6 @@ $(document).ready(function(){
         }
         return checkedButtons;
     }
-
-    // Create string of all characters for password & pass into array
 
     const createPasswordArray = (arr) => {
         const passwordLibrary = {
@@ -35,30 +31,12 @@ $(document).ready(function(){
             }
         }
         return fullstringLibrary;
-        // for (let item of arr) {
-        //     for (let book of passwordLibrary) {
-        //         if (item == book.key);
-        //             console.log(item, key);
-        //     }
-            
-        // }
-        // const arrayLibrary = fullstringLibrary.split('');
-        // return arrayLibrary;
     }
 
-    // const lowerAlphaLibrary = 'abcdefghijklmnopqrstuvwxyz';
-    // const upperAlphaLibrary = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    // const numberLibrary = '1234567890';
-    // const specialLibrary = '~!@#$%^&*()_+=-';
-    // const fullstringLibrary = lowerAlphaLibrary + upperAlphaLibrary + numberLibrary + specialLibrary;
-    // const arrayLibrary = fullstringLibrary.split('');
-
-    // Create a random integer function
     const randInt = (number = 10) => {
         return Math.floor((Math.random() * number))
     }
 
-    // Function to create the password, return as string
     const createPassword = (passwordLength) => {
         const finalPassword = [];
         const arrayLibrary = createPasswordArray(getRadioBtnValue());
@@ -69,11 +47,8 @@ $(document).ready(function(){
         return finalPassword.join('');
     }; 
 
-    // Add event listener and functionality in button
     $('.submitButton').on("click", function(event){
         event.preventDefault();
-
-        // Use create password array function to create array to use
 
         let returnPassword;
         let requestedPasswordLength = $('#numberInput').val();
