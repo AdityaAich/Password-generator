@@ -29,26 +29,30 @@
                     </ul>
                 </div>
                 <form>
-                    <div>
+                    <fieldset>
+                        <legend>Password Fields</legend>
                         <div>
-                            <input type="number" id="numberInput" name="passwordLength" required minlength="2" maxlength="3" size="10">
-                            <label for="passwordLength">Length of password</label>
+                            <div>
+                                <input type="number" id="numberInput" name="passwordLength" required minlength="2" maxlength="3" size="10">
+                                <label for="passwordLength">Length of password</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="useUpper" id="useUpper" value="upperAlphaLibrary">
+                                <label for="useUpper">Use Uppercase Characters</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="useNumbers" id="useNumbers" value="numberLibrary">
+                                <label for="useNumbers">Use Numbers</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="useSpecialChar" id="useSpecialChar" value="specialLibrary">
+                                <label for="useSpecialChar">Use Special Characters</label>
+                            </div>
                         </div>
-                        <div>
-                            <input type="radio" name="useUpper" id="useUpper" value="upperAlphaLibrary">
-                            <label for="useUpper">Use Uppercase Characters</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="useNumbers" id="useNumbers" value="numberLibrary">
-                            <label for="useNumbers">Use Numbers</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="useSpecialChar" id="useSpecialChar" value="specialLibrary">
-                            <label for="useSpecialChar">Use Special Characters</label>
-                        </div>
-                    </div>
-                    <button type="submit" class="submitButton">Submit</button>
-                    <button type="reset" class="submitButton">Reset</button>
+                        <button type="submit" class="submitButton">Submit</button>
+                        <button type="reset" class="">Reset</button>
+                    </fieldset>
+                    
                 </form>
             </div>
         </div>
