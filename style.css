@@ -71,7 +71,7 @@ body {
     /* text-align: center; */
 }
 
-.submitButton {
+.passwordButton {
     color: white;
     display: flex;
     border-radius: 5px;
@@ -84,7 +84,7 @@ body {
     box-shadow: 0 8px 12px -6px #273746;
 }
 
-.submitButton:hover {
+.passwordButton:hover {
     cursor: pointer;
     background-color:#3498db;
     box-shadow: 0 0px 0px 0px transparent;
