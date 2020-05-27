@@ -33,7 +33,7 @@ $(document).ready(function(){
         return fullstringLibrary;
     }
 
-    const randInt = (number = 10) => {
+    const randInt = (number = 12) => {
         return Math.floor((Math.random() * number))
     }
 
@@ -52,7 +52,7 @@ $(document).ready(function(){
 
         let returnPassword;
         let requestedPasswordLength = $('#numberInput').val();
-        if (requestedPasswordLength > 6) {
+        if (requestedPasswordLength > 12) {
             returnPassword = createPassword(requestedPasswordLength);
             $('.returnPassage').text(returnPassword);
         } else {

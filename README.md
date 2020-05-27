@@ -2,6 +2,12 @@
 
 A simple password generator using HTML, CSS and JavaScript. This was created to generate a random password from a requested length of characters.
 
+## May 26
+
+* My password generator only allows > 12 now. For your own good :)
+* Reset button removed, it was redundant after I changed to checkboxes
+* Still seeing a weird border radius issue on Firefox - will research
+
 ## May 25
 
 * Changed look slightly. 
