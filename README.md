@@ -4,9 +4,9 @@ A simple password generator using HTML, CSS and JavaScript. This was created to 
 
 ## May 25
 
-** Changed look slightly. 
-** Used before and after elements to create slide buttons instead of radio buttons.
-** Deleted second window - all items now reside in one window.
+* Changed look slightly. 
+* Used before and after elements to create slide buttons instead of radio buttons.
+* Deleted second window - all items now reside in one window.
 
 ## May 10
 
