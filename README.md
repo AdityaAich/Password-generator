@@ -2,6 +2,10 @@
 
 A simple password generator using HTML, CSS and JavaScript. This was created to generate a random password from a requested length of characters.
 
+## May 28
+
+* Added name spacing to further organize app and methods.
+
 ## May 26
 
 * My password generator only allows > 12 now. For your own good :)
