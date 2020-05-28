@@ -1,7 +1,9 @@
 // when document is ready
 $(document).ready(function(){
 
-    const getRadioBtnValue = () => {
+    const passGenApp = {};
+
+    passGenApp.getRadioBtnValue = () => {
         const useUpperBtn = document.querySelector('#useUpper');
         const useNumberBtn = document.querySelector('#useNumbers');
         const useSpecialCharBtn = document.querySelector('#useSpecialChar');
@@ -14,7 +16,7 @@ $(document).ready(function(){
         return checkedButtons;
     }
 
-    const createPasswordArray = (arr) => {
+    passGenApp.createPasswordArray = (arr) => {
         const passwordLibrary = {
             upperAlphaLibrary: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
             numberLibrary: '1234567890',
@@ -33,15 +35,15 @@ $(document).ready(function(){
         return fullstringLibrary;
     }
 
-    const randInt = (number = 12) => {
+    passGenApp.randInt = (number = 12) => {
         return Math.floor((Math.random() * number))
     }
 
-    const createPassword = (passwordLength) => {
+    passGenApp.createPassword = (passwordLength) => {
         const finalPassword = [];
-        const arrayLibrary = createPasswordArray(getRadioBtnValue());
+        const arrayLibrary = passGenApp.createPasswordArray(passGenApp.getRadioBtnValue());
         for (i = 0; i < passwordLength; i++) {
-            let randomNumber = randInt(arrayLibrary.length);
+            let randomNumber = passGenApp.randInt(arrayLibrary.length);
             finalPassword.push(arrayLibrary[randomNumber]);
         }
         return finalPassword.join('');
@@ -53,7 +55,7 @@ $(document).ready(function(){
         let returnPassword;
         let requestedPasswordLength = $('#numberInput').val();
         if (requestedPasswordLength > 12) {
-            returnPassword = createPassword(requestedPasswordLength);
+            returnPassword = passGenApp.createPassword(requestedPasswordLength);
             $('.returnPassage').text(returnPassword);
         } else {
             alert('For your own sake, please enter a number greater than 12.');
