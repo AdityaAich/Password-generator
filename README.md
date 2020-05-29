@@ -5,6 +5,7 @@ A simple password generator using HTML, CSS and JavaScript. This was created to 
 ## May 28
 
 * Added name spacing to further organize app and methods.
+* Also updated styling on password option toggles (added slight drop and inner shadows).
 
 ## May 26
 
