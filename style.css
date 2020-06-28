@@ -63,7 +63,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .passwordButton {
