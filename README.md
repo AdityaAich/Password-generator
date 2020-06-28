@@ -2,6 +2,8 @@
 
 A simple password generator using HTML, CSS and JavaScript. This was created to generate a random password from a requested length of characters.
 
+Live: https://lhebia.github.io/Password-generator/
+
 ## May 28
 
 * Added name spacing to further organize app and methods.
