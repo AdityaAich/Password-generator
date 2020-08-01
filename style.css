@@ -100,7 +100,7 @@ input[type="text"] {
     margin-top: 1rem;
 }
 
-input[type="checkbox"]:focus {
+input[type="checkbox"]:focus + .toggleLabel::after {
     border: 2px solid blue;
 }
 
