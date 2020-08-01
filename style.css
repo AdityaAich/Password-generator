@@ -102,6 +102,7 @@ input[type="text"] {
 
 input[type="checkbox"]:focus + .toggleLabel::after {
     border: 2px solid blue;
+    box-shadow: 0px 0px 31px -10px rgba(0,0,0,0.95);
 }
 
 .toggleLabel {
@@ -123,7 +124,7 @@ input[type="checkbox"]:focus + .toggleLabel::after {
     transition: ease 0.1s;
     -webkit-box-shadow: inset 0px 0px 21px -19px rgba(0,0,0,0.75);
     -moz-box-shadow: inset 0px 0px 21px -19px rgba(0,0,0,0.75);
-    box-shadow: inset 0px 0px 21px -19px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 21px -15px rgba(0,0,0,0.75);
 }
 
 .toggleLabel::after {
