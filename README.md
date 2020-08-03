@@ -4,6 +4,11 @@ A simple password generator using HTML, CSS and JavaScript. This was created to 
 
 Live: https://lhebia.github.io/Password-generator/
 
+## Aug 2
+
+* Updated to remove JQuery, migrated app to TypeScript
+* Improved accessibility on inputs
+
 ## May 28
 
 * Added name spacing to further organize app and methods.
