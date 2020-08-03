@@ -43,9 +43,10 @@ var createPassword = function (passwordLength) {
     }
     return finalPassword.join('');
 };
-var submitButton = document.querySelector('.submitButton');
-submitButton.addEventListener('click', function (e) {
-    e.preventDefault();
+var submitButton = document.querySelector('form');
+console.log(submitButton);
+submitButton.addEventListener('submit', function (event) {
+    event.preventDefault();
     var returnPassword = null;
     var requestedPasswordLength = parseInt(document.querySelector('#numberInput').value);
     if (requestedPasswordLength > 12) {

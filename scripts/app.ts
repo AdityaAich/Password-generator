@@ -44,9 +44,10 @@ let createPassword = (passwordLength:number):string => {
     return finalPassword.join('');
 }; 
 
-let submitButton:Element = document.querySelector('.submitButton');
-submitButton.addEventListener('click', function(e){
-    e.preventDefault();
+let submitButton:Element = document.querySelector('form');
+console.log(submitButton);
+submitButton.addEventListener('submit', (event) => {
+    event.preventDefault();
     let returnPassword:String = null;
     let requestedPasswordLength:number = parseInt(document.querySelector('#numberInput').value);
     if (requestedPasswordLength > 12) {
