@@ -1,6 +1,4 @@
-const passGenApp:Object = {};
-
-passGenApp.getRadioBtnValue = ():Array<Element> => {
+let getRadioBtnValue = ():Array<Element> => {
     const useUpperBtn:Element = document.querySelector('#useUpper');
     const useNumberBtn:Element = document.querySelector('#useNumbers');
     const useSpecialCharBtn:Element = document.querySelector('#useSpecialChar');
@@ -13,7 +11,7 @@ passGenApp.getRadioBtnValue = ():Array<Element> => {
     return checkedButtons;
 }
 
-passGenApp.createPasswordArray = (arr) => {
+let createPasswordArray = (arr:Element[]) => {
     interface Library { upperAlphaLibrary: string; numberLibrary: string; specialLibrary: string }
     const passwordLibrary = {} as Library;
     passwordLibrary.upperAlphaLibrary = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -32,34 +30,30 @@ passGenApp.createPasswordArray = (arr) => {
     return fullstringLibrary;
 }
 
-passGenApp.randInt = (num:number = 12):number => {
+let randInt = (num:number = 12):number => {
     return Math.floor((Math.random() * num))
 }
 
-passGenApp.createPassword = (passwordLength:number):string => {
+let createPassword = (passwordLength:number):string => {
     const finalPassword:Array<string> = [];
-    const arrayLibrary = passGenApp.createPasswordArray(passGenApp.getRadioBtnValue());
+    const arrayLibrary:any[] = createPasswordArray(getRadioBtnValue());
     for (let i:number = 0; i < passwordLength; i++) {
-        let randomNumber:number = passGenApp.randInt(arrayLibrary.length);
+        let randomNumber:number = randInt(arrayLibrary.length);
         finalPassword.push(arrayLibrary[randomNumber]);
     }
     return finalPassword.join('');
 }; 
 
-const submitButton:Element = document.querySelector('.submitButton');
+let submitButton:Element = document.querySelector('.submitButton');
 submitButton.addEventListener('click', function(e){
     e.preventDefault();
     let returnPassword:String = null;
     let requestedPasswordLength:number = parseInt(document.querySelector('#numberInput').value);
-    if (typeof(requestedPasswordLength) === 'number'){
-        if (requestedPasswordLength > 12) {
-            returnPassword = passGenApp.createPassword(requestedPasswordLength);
-            const response:Element = document.querySelector('.returnPassage');
-            response.innerHTML = returnPassword;
-        } else {
-            alert('For your own sake, please enter a number greater than 12.');
-        }
+    if (requestedPasswordLength > 12) {
+        returnPassword = createPassword(requestedPasswordLength);
+        const response:Element = document.querySelector('.returnPassage');
+        response.innerHTML = returnPassword;
     } else {
-        alert('Please enter a number.');
+        alert('For your own sake, please enter a number greater than 12.');
     }
 })

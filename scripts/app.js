@@ -1,5 +1,4 @@
-var passGenApp = {};
-passGenApp.getRadioBtnValue = function () {
+var getRadioBtnValue = function () {
     var useUpperBtn = document.querySelector('#useUpper');
     var useNumberBtn = document.querySelector('#useNumbers');
     var useSpecialCharBtn = document.querySelector('#useSpecialChar');
@@ -12,7 +11,7 @@ passGenApp.getRadioBtnValue = function () {
     }
     return checkedButtons;
 };
-passGenApp.createPasswordArray = function (arr) {
+var createPasswordArray = function (arr) {
     var passwordLibrary = {};
     passwordLibrary.upperAlphaLibrary = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     passwordLibrary.numberLibrary = '1234567890';
@@ -31,15 +30,15 @@ passGenApp.createPasswordArray = function (arr) {
     }
     return fullstringLibrary;
 };
-passGenApp.randInt = function (num) {
+var randInt = function (num) {
     if (num === void 0) { num = 12; }
     return Math.floor((Math.random() * num));
 };
-passGenApp.createPassword = function (passwordLength) {
+var createPassword = function (passwordLength) {
     var finalPassword = [];
-    var arrayLibrary = passGenApp.createPasswordArray(passGenApp.getRadioBtnValue());
+    var arrayLibrary = createPasswordArray(getRadioBtnValue());
     for (var i = 0; i < passwordLength; i++) {
-        var randomNumber = passGenApp.randInt(arrayLibrary.length);
+        var randomNumber = randInt(arrayLibrary.length);
         finalPassword.push(arrayLibrary[randomNumber]);
     }
     return finalPassword.join('');
@@ -49,17 +48,12 @@ submitButton.addEventListener('click', function (e) {
     e.preventDefault();
     var returnPassword = null;
     var requestedPasswordLength = parseInt(document.querySelector('#numberInput').value);
-    if (typeof (requestedPasswordLength) === 'number') {
-        if (requestedPasswordLength > 12) {
-            returnPassword = passGenApp.createPassword(requestedPasswordLength);
-            var response = document.querySelector('.returnPassage');
-            response.innerHTML = returnPassword;
-        }
-        else {
-            alert('For your own sake, please enter a number greater than 12.');
-        }
+    if (requestedPasswordLength > 12) {
+        returnPassword = createPassword(requestedPasswordLength);
+        var response = document.querySelector('.returnPassage');
+        response.innerHTML = returnPassword;
     }
     else {
-        alert('Please enter a number.');
+        alert('For your own sake, please enter a number greater than 12.');
     }
 });
