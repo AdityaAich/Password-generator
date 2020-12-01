@@ -44,7 +44,6 @@ var createPassword = function (passwordLength) {
     return finalPassword.join('');
 };
 var submitButton = document.querySelector('form');
-console.log(submitButton);
 submitButton.addEventListener('submit', function (event) {
     event.preventDefault();
     var returnPassword = null;
@@ -52,9 +51,17 @@ submitButton.addEventListener('submit', function (event) {
     if (requestedPasswordLength > 12) {
         returnPassword = createPassword(requestedPasswordLength);
         var response = document.querySelector('.returnPassage');
-        response.innerHTML = returnPassword;
+        response.value = returnPassword;
     }
     else {
         alert('For your own sake, please enter a number greater than 12.');
     }
+});
+var copyButton = document.querySelector('.copyButton');
+copyButton.addEventListener('click', function () {
+    var copyText = document.querySelector('.returnPassage');
+    console.log(copyText);
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
 });

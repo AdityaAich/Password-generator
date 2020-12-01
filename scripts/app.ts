@@ -45,7 +45,6 @@ let createPassword = (passwordLength:number):string => {
 }; 
 
 let submitButton:Element = document.querySelector('form');
-console.log(submitButton);
 submitButton.addEventListener('submit', (event) => {
     event.preventDefault();
     let returnPassword:String = null;
@@ -53,8 +52,17 @@ submitButton.addEventListener('submit', (event) => {
     if (requestedPasswordLength > 12) {
         returnPassword = createPassword(requestedPasswordLength);
         const response:Element = document.querySelector('.returnPassage');
-        response.innerHTML = returnPassword;
+        response.value = returnPassword;
     } else {
         alert('For your own sake, please enter a number greater than 12.');
     }
+})
+
+const copyButton = document.querySelector('.copyButton');
+copyButton.addEventListener('click', () => {
+  const copyText = document.querySelector('.returnPassage');
+  console.log(copyText);
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
 })

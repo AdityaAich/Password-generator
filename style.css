@@ -61,9 +61,29 @@ body {
     padding: 1rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: 1.2rem;
     overflow-x: auto;
+    position: relative;
+}
+
+.responseWindow button {
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+    border: transparent;
+    padding: 1rem;
+    border-left: 1px darkgrey solid;
+}
+
+.returnPassage {
+    width: 80%;
+    border: transparent;
+    background-color: transparent;
+}
+
+.returnPassage:active {
+    border: transparent;
 }
 
 .passwordButton {
